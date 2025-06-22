@@ -22,8 +22,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }))
 
 app.use("/",route)
-
-let port=5002
-app.listen(port,()=>{
-    console.log(`server running on port ${port}`);
+const PORT = process.env.PORT || 5002;
+app.get('/', (req, res) => {
+  res.send('Backend is live!');
+});
+app.listen(PORT,()=>{
+    console.log(`server running on port ${PORT}`);
 })
