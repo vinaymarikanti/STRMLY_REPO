@@ -1,0 +1,112 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+nav{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:cadetblue;
+    border: 1px solid crimson;
+}
+a{
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: gray;
+    color: white;
+}
+a:hover{
+    background-color:crimson;
+}
+
+.login{
+    width: 30%;
+    height: 35vh;
+    background-color:chocolate;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.btn{
+    background-color: crimson;
+    padding: 5px;
+    color: white;
+}
+button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid black;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: black;
+  cursor: pointer;
+}
+button:hover{
+  color: white;
+}
+
+input,textarea{
+    padding: 5px;
+}
+.msg {
+  color:white;
+  font-size: 14px;
+}
+.file{
+    margin-left: 80px;
+}
+
+.video-feed {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.video-feed h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.video-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+.video-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #222;
+}
+
+.video-card p {
+  margin: 0.2rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.video-card video {
+  border-radius: 6px;
+  margin-top: 1rem;
+  background: black;
+}
