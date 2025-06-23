@@ -1,48 +1,65 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    outline: none;
-}
-nav{
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color:cadetblue;
-    border: 1px solid crimson;
-}
-a{
-    text-decoration: none;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 3px;
-    background-color: gray;
-    color: white;
-}
-a:hover{
-    background-color:crimson;
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
-.login{
-    width: 30%;
-    height: 35vh;
-    background-color:chocolate;
-    margin: auto;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 15px;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
-.btn{
-    background-color: crimson;
-    padding: 5px;
-    color: white;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: none;
 }
+
+nav {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: cadetblue;
+  border: 1px solid crimson;
+}
+
+a {
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: gray;
+  color: white;
+}
+
+a:hover {
+  background-color: crimson;
+}
+
+.login {
+  width: 30%;
+  height: 35vh;
+  background-color: chocolate;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.btn {
+  background-color: crimson;
+  padding: 5px;
+  color: white;
+}
+
 button {
   background: none;
   border: none;
@@ -53,19 +70,23 @@ button {
   color: black;
   cursor: pointer;
 }
-button:hover{
+
+button:hover {
   color: white;
 }
 
-input,textarea{
-    padding: 5px;
+input,
+textarea {
+  padding: 5px;
 }
+
 .msg {
-  color:white;
+  color: white;
   font-size: 14px;
 }
-.file{
-    margin-left: 80px;
+
+.file {
+  margin-left: 80px;
 }
 
 .video-feed {
@@ -109,4 +130,50 @@ input,textarea{
   border-radius: 6px;
   margin-top: 1rem;
   background: black;
+}
+
+/* Responsive for mobile devices */
+@media (max-width: 600px) {
+
+  nav {
+    flex-direction: column;
+    height: auto; /* allow nav height to adjust */
+    padding: 10px 0;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+
+  .login {
+    width: 90%; /* nearly full width */
+    height: auto; /* height adjusts with content */
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .file {
+    margin-left: auto; /* remove left margin */
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+  }
+
+  .video-feed {
+    max-width: 100%; /* full width on mobile */
+    padding: 0 0.5rem;
+  }
+
+  .video-card video {
+    width: 100%; /* responsive video */
+    height: auto;
+  }
+
+  .video-card p {
+    word-wrap: break-word; /* old but widely supported */
+    overflow-wrap: break-word; /* modern */
+    word-break: break-all; /* break words if needed */
+    hyphens: auto; /* adds hyphens if supported */
+  }
 }
