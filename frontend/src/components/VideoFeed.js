@@ -5,12 +5,21 @@ let VideoFeed = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5002/getvideos').then((res)=>{
-        setVideos(res.data)
-    }).catch((error)=>{
-        console.error('Error fetching videos:',error);  
+  axios.get(`${process.env.REACT_APP_API_URL}/getvideos`)
+    .then((res) => {
+      console.log("Response from backend:", res.data);
+      const videoArray = Array.isArray(res.data)
+        ? res.data
+        : [];
+      setVideos(videoArray);
     })
-  }, []);
+    .catch((error) => {
+      console.error('Error fetching videos:', error);
+      setVideos([]);
+    });
+}, []);
+
+
 
   return (
     <div className='video-feed'>

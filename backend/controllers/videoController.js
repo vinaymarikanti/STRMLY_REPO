@@ -26,7 +26,7 @@ let getVideos=async(req,res)=>{
     try
     {
         let data=await videoModel.find().sort({ createdAt: -1 }).populate('uploader', 'name');
-        res.json(data)
+        res.json({ videos: data })
     }
     catch(error)
     {

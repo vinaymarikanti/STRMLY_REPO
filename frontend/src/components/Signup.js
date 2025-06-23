@@ -16,11 +16,15 @@ const Signup = () => {
 let register=()=>{
     if(data.name!==""&&data.email!==""&&data.password!=="")
     {
-      axios.post("http://localhost:5002/signup",data).then((res)=>{
+      axios.post(`${process.env.REACT_APP_API_URL}/signup`,data).then((res)=>{
         setmsg("Email already registered. Please log in.")
         if(res.data.msg==="Account created successfully")
         {
           navigate("/login")
+        }
+        else
+        {
+          setmsg(res.data.msg || "Signup failed. Try again.");
         }
       }).catch((error)=>{
         console.log(error); 

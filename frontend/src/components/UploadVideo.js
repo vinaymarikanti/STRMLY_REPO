@@ -25,9 +25,9 @@ const UploadVideo = () => {
     fd.append('title', data.title)
     fd.append('description', data.description)
     fd.append('video', data.video)
-    axios.post("http://localhost:5002/uploadvideo",fd,{
+    axios.post(`${process.env.REACT_APP_API_URL}/uploadvideo`,fd,{
       headers: {
-      Authorization: obj.state.token}}).then((res)=>{
+      Authorization: `Bearer ${obj.state.token}`}}).then((res)=>{
       navigate("/")
     }).catch((error)=>{
         console.error(error)

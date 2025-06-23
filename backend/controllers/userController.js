@@ -8,7 +8,7 @@ let signup=async(req,res)=>{
         let existingUser=await userModel.findOne({"email":req.body.email})
         if(existingUser)
         {
-          return res.json({"msg":"check e-mail"})
+          return res.json({ msg: "Email already registered. Please login." })
         }
         else
         {
@@ -77,7 +77,7 @@ let getProfile=async(req,res)=>{
 let islogin=(req,res,next)=>{
     try
     {
-    let token = req.headers.authorization;
+    let token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       return res.json({ msg: 'Access denied. No token provided.' });
     }

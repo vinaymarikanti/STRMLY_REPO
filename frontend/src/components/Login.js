@@ -15,10 +15,14 @@ const Login = () => {
   }
 
   let login=()=>{
-    axios.post("http://localhost:5002/login",data).then((res)=>{
+    axios.post(`${process.env.REACT_APP_API_URL}/login`,data).then((res)=>{
       if(res.data.token!==undefined)
       {
-        obj.updatestate(res.data)
+        obj.updatestate({
+          token: res.data.token,
+          name: res.data.name,
+          email: res.data.email
+        })
         navigate("/")
       }
       else{
